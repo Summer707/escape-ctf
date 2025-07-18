@@ -61,9 +61,9 @@ export default function Level5() {
         </div>
       ))}
 
-      {hidden && (
-        <div style={{ marginTop: "2rem" }}>
-          <p>One final gate remains.</p>
+      <div style={{ marginTop: "2rem" }}>
+        {hidden && <p>One final gate remains.</p>}
+        {hidden && (
           <p
             style={{ fontSize: "0.9rem", opacity: 0.6, cursor: "pointer" }}
             onClick={() => setShowCipherHint(true)}
@@ -71,15 +71,23 @@ export default function Level5() {
           >
             Hint: Think psychological. Think signal. The mind is a machine.
           </p>
-          {showCipherHint && (
-            <p style={{ fontSize: "0.9rem", color: "#0ff", marginTop: "0.5rem" }}>
-              The WiFi shift is based on an Atbash of the AI's memories.
-            </p>
-          )}
+        )}
+        {hidden && showCipherHint && (
+          <p style={{ fontSize: "0.9rem", color: "#0ff", marginTop: "0.5rem" }}>
+            The WiFi shift is based on an Atbash of the AI's memories.
+          </p>
+        )}
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            checkFlag();
+          }}
+          style={{ display: "inline" }}
+        >
           <input
             placeholder="Enter final flag"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={e => setInput(e.target.value)}
             style={{
               backgroundColor: "#111",
               color: "#0f0",
@@ -91,7 +99,7 @@ export default function Level5() {
             }}
           />
           <button
-            onClick={checkFlag}
+            type="submit"
             style={{
               marginLeft: "1rem",
               padding: "0.5rem 1rem",
@@ -103,8 +111,8 @@ export default function Level5() {
           >
             Submit
           </button>
-        </div>
-      )}
+        </form>
+      </div>
       <div style={{ display: "none" }}>
   system.msg = "What's this doing here? illh xq ilzxi pqloxdb";
 </div>
