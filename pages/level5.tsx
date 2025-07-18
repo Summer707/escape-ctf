@@ -11,7 +11,7 @@ export default function Level5() {
 
   useEffect(() => {
     // Simulate matrix loading effect
-    localStorage.setItem("System backlogs", "cixd{yobxhqeolrde}");
+    localStorage.setItem("System backlogs", "cixd{cfkxiylpp}");
 
     const interval = setInterval(() => {
       const line = Array.from({ length: 50 }, () => (Math.random() < 0.5 ? "0" : "1"));
@@ -31,7 +31,7 @@ export default function Level5() {
   }, []);
 
   const checkFlag = () => {
-    if (input.trim().toLowerCase() === "flag{m1nd_h34ck_ov3r}") {
+    if (input.trim().toLowerCase() === "flag{finalboss}") {
       router.push("/complete");
     } else {
       setMessage("Incorrect. The firewall adapts.");
